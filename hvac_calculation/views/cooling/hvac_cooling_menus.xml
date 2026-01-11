@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Cooling Sub-menu under Main HVAC -->
+    <menuitem id="menu_hvac_cooling"
+              name="❄️ Central Air Conditioning"
+              parent="menu_hvac_root"
+              sequence="20"/>
+
+    <menuitem id="menu_hvac_cooling_projects"
+              name="Cooling Projects"
+              parent="menu_hvac_cooling"
+              action="action_hvac_cooling_project"
+              sequence="10"/>
+
+    <menuitem id="menu_hvac_cooling_config"
+              name="Configuration"
+              parent="menu_hvac_cooling"
+              sequence="100"/>
+
+    <menuitem id="menu_hvac_cooling_chillers"
+              name="Chillers"
+              parent="menu_hvac_cooling_config"
+              action="action_hvac_chiller"
+              sequence="10"/>
+
+    <menuitem id="menu_hvac_cooling_ahus"
+              name="Air Handling Units"
+              parent="menu_hvac_cooling_config"
+              action="action_hvac_ahu"
+              sequence="20"/>
+
+    <menuitem id="menu_hvac_cooling_fcus"
+              name="Fan Coil Units"
+              parent="menu_hvac_cooling_config"
+              action="action_hvac_fcu"
+              sequence="30"/>
+
+    <menuitem id="menu_hvac_cooling_duct_materials"
+              name="Duct Materials"
+              parent="menu_hvac_cooling_config"
+              action="action_hvac_duct_material"
+              sequence="40"/>
+
+    <menuitem id="menu_hvac_cooling_diffusers"
+              name="Diffusers &amp; Grilles"
+              parent="menu_hvac_cooling_config"
+              action="action_hvac_diffuser"
+              sequence="50"/>
+
+</odoo>

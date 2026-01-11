@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        
+        <record id="boiler_wall_24" model="hvac.boiler">
+            <field name="name">Wall Mounted Boiler 24kW</field>
+            <field name="boiler_type">wall</field>
+            <field name="fuel_type">gas</field>
+            <field name="kw_output">24</field>
+            <field name="efficiency">92</field>
+            <field name="price">25000</field>
+        </record>
+        
+        <record id="boiler_wall_28" model="hvac.boiler">
+            <field name="name">Wall Mounted Boiler 28kW</field>
+            <field name="boiler_type">wall</field>
+            <field name="fuel_type">gas</field>
+            <field name="kw_output">28</field>
+            <field name="efficiency">92</field>
+            <field name="price">28000</field>
+        </record>
+        
+        <record id="boiler_wall_35" model="hvac.boiler">
+            <field name="name">Wall Mounted Boiler 35kW</field>
+            <field name="boiler_type">wall</field>
+            <field name="fuel_type">gas</field>
+            <field name="kw_output">35</field>
+            <field name="efficiency">93</field>
+            <field name="price">35000</field>
+        </record>
+        
+        <record id="boiler_floor_50" model="hvac.boiler">
+            <field name="name">Floor Standing Boiler 50kW</field>
+            <field name="boiler_type">floor</field>
+            <field name="fuel_type">gas</field>
+            <field name="kw_output">50</field>
+            <field name="efficiency">94</field>
+            <field name="price">55000</field>
+        </record>
+        
+        <record id="boiler_floor_70" model="hvac.boiler">
+            <field name="name">Floor Standing Boiler 70kW</field>
+            <field name="boiler_type">floor</field>
+            <field name="fuel_type">gas</field>
+            <field name="kw_output">70</field>
+            <field name="efficiency">94</field>
+            <field name="price">75000</field>
+        </record>
+        
+        <record id="boiler_floor_100" model="hvac.boiler">
+            <field name="name">Floor Standing Boiler 100kW</field>
+            <field name="boiler_type">floor</field>
+            <field name="fuel_type">gas</field>
+            <field name="kw_output">100</field>
+            <field name="efficiency">95</field>
+            <field name="price">95000</field>
+        </record>
+        
+    </data>
+</odoo>

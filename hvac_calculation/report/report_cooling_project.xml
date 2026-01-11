@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="action_report_cooling_project" model="ir.actions.report">
+        <field name="name">Cooling Technical Offer</field>
+        <field name="model">hvac.cooling.project</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">hvac_calculation.report_cooling_project_document</field>
+        <field name="report_file">hvac_calculation.report_cooling_project_document</field>
+        <field name="binding_model_id" ref="model_hvac_cooling_project"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <template id="report_cooling_project_document">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <div class="text-center mb-4">
+                            <h2><strong>Technical Offer – Central Air Conditioning</strong></h2>
+                        </div>
+                        
+                        <div class="row mb-4">
+                            <div class="col-6">
+                                <strong>Customer:</strong> <span t-field="doc.customer_id.name"/><br/>
+                                <t t-if="doc.attention_to"><strong>Attention:</strong> <span t-field="doc.attention_to"/><br/></t>
+                            </div>
+                            <div class="col-6 text-end">
+                                <strong>Offer:</strong> <span t-field="doc.offer_code"/><br/>
+                                <strong>Date:</strong> <span t-field="doc.date"/><br/>
+                            </div>
+                        </div>
+                        
+                        <h4>Cooling Load Calculation</h4>
+                        <table class="table table-sm table-bordered">
+                            <thead><tr>
+                                <th>Floor</th><th>Room</th><th>Area (m²)</th><th>Load (W)</th><th>Load (BTU)</th><th>Load (TR)</th><th>FCU</th>
+                            </tr></thead>
+                            <tbody>
+                                <t t-foreach="doc.space_ids" t-as="space">
+                                    <tr>
+                                        <td><span t-field="space.floor"/></td>
+                                        <td><span t-field="space.room_name"/></td>
+                                        <td class="text-end"><span t-esc="'%.2f' % space.area"/></td>
+                                        <td class="text-end"><span t-esc="'%.0f' % space.cooling_load_watt"/></td>
+                                        <td class="text-end"><span t-esc="'%.0f' % space.cooling_load_btu"/></td>
+                                        <td class="text-end"><span t-esc="'%.2f' % space.cooling_load_ton"/></td>
+                                        <td><t t-if="space.fcu_id"><span t-esc="'%.1f kW' % space.fcu_id.cooling_capacity_kw"/> x <span t-field="space.fcu_qty"/></t></td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                            <tfoot><tr class="table-light">
+                                <td colspan="2"><strong>Total</strong></td>
+                                <td class="text-end"><strong><span t-esc="'%.2f' % doc.total_cooling_area"/> m²</strong></td>
+                                <td class="text-end"><strong><span t-esc="'%.0f' % doc.total_cooling_load_watt"/> W</strong></td>
+                                <td class="text-end"><strong><span t-esc="'%.0f' % doc.total_cooling_load_btu"/> BTU</strong></td>
+                                <td class="text-end"><strong><span t-esc="'%.2f' % doc.total_cooling_load_ton"/> TR</strong></td>
+                                <td></td>
+                            </tr></tfoot>
+                        </table>
+                        
+                        <h4 class="mt-4">Financial Offer</h4>
+                        <table class="table table-sm table-bordered">
+                            <thead><tr><th>Description</th><th>Unit</th><th>Qty</th><th>Price</th><th>Total</th></tr></thead>
+                            <tbody>
+                                <t t-if="doc.chiller_id"><tr>
+                                    <td><span t-field="doc.chiller_id.name"/> (<span t-esc="'%.1f' % doc.chiller_id.cooling_capacity_ton"/> TR)</td><td>No.</td>
+                                    <td><span t-field="doc.chiller_qty"/></td>
+                                    <td class="text-end"><span t-esc="'{:,.0f}'.format(doc.chiller_id.price)"/></td>
+                                    <td class="text-end"><span t-esc="'{:,.0f}'.format(doc.chiller_price)"/></td>
+                                </tr></t>
+                                <t t-foreach="doc.ahu_ids" t-as="ahu"><tr>
+                                    <td><span t-field="ahu.name"/> (<span t-esc="'%.0f' % ahu.airflow_cfm"/> CFM)</td><td>No.</td><td>1</td>
+                                    <td class="text-end"><span t-esc="'{:,.0f}'.format(ahu.price)"/></td>
+                                    <td class="text-end"><span t-esc="'{:,.0f}'.format(ahu.price)"/></td>
+                                </tr></t>
+                                <t t-foreach="doc.space_ids.filtered(lambda s: s.fcu_id)" t-as="s">
+                                    <tr><td><span t-field="s.fcu_id.name"/> - <span t-field="s.room_name"/></td>
+                                    <td>No.</td><td><span t-field="s.fcu_qty"/></td>
+                                    <td class="text-end"><span t-esc="'{:,.0f}'.format(s.fcu_unit_price)"/></td>
+                                    <td class="text-end"><span t-esc="'{:,.0f}'.format(s.fcu_subtotal)"/></td></tr>
+                                </t>
+                                <t t-if="doc.thermostat_count"><tr>
+                                    <td>Room Thermostat</td><td>No.</td>
+                                    <td><span t-esc="doc.thermostat_count"/></td><td class="text-end">3,000</td>
+                                    <td class="text-end"><span t-esc="'{:,.0f}'.format(doc.thermostat_total)"/></td>
+                                </tr></t>
+                                <t t-foreach="doc.duct_line_ids" t-as="line">
+                                    <tr><td><span t-field="line.name"/></td><td><span t-field="line.unit"/></td>
+                                    <td><span t-esc="'%.2f' % line.quantity"/></td>
+                                    <td class="text-end"><span t-esc="'{:,.0f}'.format(line.unit_price)"/></td>
+                                    <td class="text-end"><span t-esc="'{:,.0f}'.format(line.subtotal)"/></td></tr>
+                                </t>
+                            </tbody>
+                            <tfoot>
+                                <tr class="table-primary"><td colspan="4"><h5>Grand Total</h5></td>
+                                <td class="text-end"><h5><span t-esc="'{:,.0f}'.format(doc.grand_total)"/></h5></td></tr>
+                            </tfoot>
+                        </table>
+                        
+                        <t t-if="doc.offer_includes"><h5 class="mt-4">The Offer Includes:</h5><div t-field="doc.offer_includes"/></t>
+                        <t t-if="doc.offer_excludes"><h5>The Offer Excludes:</h5><div t-field="doc.offer_excludes"/></t>
+                        <t t-if="doc.payment_terms"><h5>Payment Terms:</h5><div t-field="doc.payment_terms"/></t>
+                        <t t-if="doc.warranty"><h5>Warranty:</h5><div t-field="doc.warranty"/></t>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

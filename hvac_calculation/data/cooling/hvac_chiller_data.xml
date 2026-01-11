@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        
+        <record id="chiller_air_20" model="hvac.chiller">
+            <field name="name">Air Cooled Chiller 20 TR</field>
+            <field name="chiller_type">air_cooled</field>
+            <field name="cooling_capacity_kw">70</field>
+            <field name="power_input_kw">25</field>
+            <field name="cop">2.8</field>
+            <field name="voltage">380</field>
+            <field name="price">150000</field>
+        </record>
+        
+        <record id="chiller_air_30" model="hvac.chiller">
+            <field name="name">Air Cooled Chiller 30 TR</field>
+            <field name="chiller_type">air_cooled</field>
+            <field name="cooling_capacity_kw">105</field>
+            <field name="power_input_kw">35</field>
+            <field name="cop">3.0</field>
+            <field name="voltage">380</field>
+            <field name="price">200000</field>
+        </record>
+        
+        <record id="chiller_air_50" model="hvac.chiller">
+            <field name="name">Air Cooled Chiller 50 TR</field>
+            <field name="chiller_type">air_cooled</field>
+            <field name="cooling_capacity_kw">175</field>
+            <field name="power_input_kw">55</field>
+            <field name="cop">3.2</field>
+            <field name="voltage">380</field>
+            <field name="price">300000</field>
+        </record>
+        
+        <record id="chiller_air_80" model="hvac.chiller">
+            <field name="name">Air Cooled Chiller 80 TR</field>
+            <field name="chiller_type">air_cooled</field>
+            <field name="cooling_capacity_kw">280</field>
+            <field name="power_input_kw">85</field>
+            <field name="cop">3.3</field>
+            <field name="voltage">380</field>
+            <field name="price">450000</field>
+        </record>
+        
+        <record id="chiller_air_100" model="hvac.chiller">
+            <field name="name">Air Cooled Chiller 100 TR</field>
+            <field name="chiller_type">air_cooled</field>
+            <field name="cooling_capacity_kw">350</field>
+            <field name="power_input_kw">100</field>
+            <field name="cop">3.5</field>
+            <field name="voltage">380</field>
+            <field name="price">550000</field>
+        </record>
+        
+        <record id="chiller_water_50" model="hvac.chiller">
+            <field name="name">Water Cooled Chiller 50 TR</field>
+            <field name="chiller_type">water_cooled</field>
+            <field name="cooling_capacity_kw">175</field>
+            <field name="power_input_kw">45</field>
+            <field name="cop">3.9</field>
+            <field name="voltage">380</field>
+            <field name="price">350000</field>
+        </record>
+        
+        <record id="chiller_water_100" model="hvac.chiller">
+            <field name="name">Water Cooled Chiller 100 TR</field>
+            <field name="chiller_type">water_cooled</field>
+            <field name="cooling_capacity_kw">350</field>
+            <field name="power_input_kw">85</field>
+            <field name="cop">4.1</field>
+            <field name="voltage">380</field>
+            <field name="price">600000</field>
+        </record>
+        
+    </data>
+</odoo>

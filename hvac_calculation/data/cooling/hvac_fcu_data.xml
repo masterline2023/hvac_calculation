@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        
+        <!-- Ceiling Concealed FCUs -->
+        <record id="fcu_cc_1_5" model="hvac.fcu">
+            <field name="name">FCU Ceiling Concealed 1.5 kW</field>
+            <field name="fcu_type">ceiling_concealed</field>
+            <field name="cooling_capacity_kw">1.5</field>
+            <field name="airflow_cfm">200</field>
+            <field name="fan_speeds">3</field>
+            <field name="power_input_w">35</field>
+            <field name="voltage">220</field>
+            <field name="price">3500</field>
+        </record>
+        
+        <record id="fcu_cc_2_5" model="hvac.fcu">
+            <field name="name">FCU Ceiling Concealed 2.5 kW</field>
+            <field name="fcu_type">ceiling_concealed</field>
+            <field name="cooling_capacity_kw">2.5</field>
+            <field name="airflow_cfm">300</field>
+            <field name="fan_speeds">3</field>
+            <field name="power_input_w">45</field>
+            <field name="voltage">220</field>
+            <field name="price">4500</field>
+        </record>
+        
+        <record id="fcu_cc_3_5" model="hvac.fcu">
+            <field name="name">FCU Ceiling Concealed 3.5 kW</field>
+            <field name="fcu_type">ceiling_concealed</field>
+            <field name="cooling_capacity_kw">3.5</field>
+            <field name="airflow_cfm">400</field>
+            <field name="fan_speeds">3</field>
+            <field name="power_input_w">55</field>
+            <field name="voltage">220</field>
+            <field name="price">5500</field>
+        </record>
+        
+        <record id="fcu_cc_5" model="hvac.fcu">
+            <field name="name">FCU Ceiling Concealed 5 kW</field>
+            <field name="fcu_type">ceiling_concealed</field>
+            <field name="cooling_capacity_kw">5</field>
+            <field name="airflow_cfm">600</field>
+            <field name="fan_speeds">3</field>
+            <field name="power_input_w">80</field>
+            <field name="voltage">220</field>
+            <field name="price">7000</field>
+        </record>
+        
+        <record id="fcu_cc_7" model="hvac.fcu">
+            <field name="name">FCU Ceiling Concealed 7 kW</field>
+            <field name="fcu_type">ceiling_concealed</field>
+            <field name="cooling_capacity_kw">7</field>
+            <field name="airflow_cfm">850</field>
+            <field name="fan_speeds">3</field>
+            <field name="power_input_w">110</field>
+            <field name="voltage">220</field>
+            <field name="price">9000</field>
+        </record>
+        
+        <record id="fcu_cc_10" model="hvac.fcu">
+            <field name="name">FCU Ceiling Concealed 10 kW</field>
+            <field name="fcu_type">ceiling_concealed</field>
+            <field name="cooling_capacity_kw">10</field>
+            <field name="airflow_cfm">1200</field>
+            <field name="fan_speeds">3</field>
+            <field name="power_input_w">150</field>
+            <field name="voltage">220</field>
+            <field name="price">12000</field>
+        </record>
+        
+        <record id="fcu_cc_14" model="hvac.fcu">
+            <field name="name">FCU Ceiling Concealed 14 kW</field>
+            <field name="fcu_type">ceiling_concealed</field>
+            <field name="cooling_capacity_kw">14</field>
+            <field name="airflow_cfm">1700</field>
+            <field name="fan_speeds">3</field>
+            <field name="power_input_w">200</field>
+            <field name="voltage">220</field>
+            <field name="price">16000</field>
+        </record>
+        
+        <!-- Cassette FCUs -->
+        <record id="fcu_cassette_3_5" model="hvac.fcu">
+            <field name="name">FCU Cassette 3.5 kW</field>
+            <field name="fcu_type">cassette</field>
+            <field name="cooling_capacity_kw">3.5</field>
+            <field name="airflow_cfm">450</field>
+            <field name="fan_speeds">3</field>
+            <field name="power_input_w">60</field>
+            <field name="voltage">220</field>
+            <field name="price">8000</field>
+        </record>
+        
+        <record id="fcu_cassette_5" model="hvac.fcu">
+            <field name="name">FCU Cassette 5 kW</field>
+            <field name="fcu_type">cassette</field>
+            <field name="cooling_capacity_kw">5</field>
+            <field name="airflow_cfm">650</field>
+            <field name="fan_speeds">3</field>
+            <field name="power_input_w">85</field>
+            <field name="voltage">220</field>
+            <field name="price">10000</field>
+        </record>
+        
+        <record id="fcu_cassette_7" model="hvac.fcu">
+            <field name="name">FCU Cassette 7 kW</field>
+            <field name="fcu_type">cassette</field>
+            <field name="cooling_capacity_kw">7</field>
+            <field name="airflow_cfm">900</field>
+            <field name="fan_speeds">3</field>
+            <field name="power_input_w">120</field>
+            <field name="voltage">220</field>
+            <field name="price">13000</field>
+        </record>
+        
+        <!-- Wall Mounted FCUs -->
+        <record id="fcu_wall_2" model="hvac.fcu">
+            <field name="name">FCU Wall Mounted 2 kW</field>
+            <field name="fcu_type">wall_mounted</field>
+            <field name="cooling_capacity_kw">2</field>
+            <field name="airflow_cfm">250</field>
+            <field name="fan_speeds">3</field>
+            <field name="power_input_w">40</field>
+            <field name="voltage">220</field>
+            <field name="price">4000</field>
+        </record>
+        
+        <record id="fcu_wall_3_5" model="hvac.fcu">
+            <field name="name">FCU Wall Mounted 3.5 kW</field>
+            <field name="fcu_type">wall_mounted</field>
+            <field name="cooling_capacity_kw">3.5</field>
+            <field name="airflow_cfm">400</field>
+            <field name="fan_speeds">3</field>
+            <field name="power_input_w">55</field>
+            <field name="voltage">220</field>
+            <field name="price">5500</field>
+        </record>
+        
+    </data>
+</odoo>

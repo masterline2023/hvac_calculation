@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="action_report_hotwater_project" model="ir.actions.report">
+        <field name="name">Hot Water Technical Offer</field>
+        <field name="model">hvac.hotwater.project</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">hvac_calculation.report_hotwater_project_document</field>
+        <field name="report_file">hvac_calculation.report_hotwater_project_document</field>
+        <field name="binding_model_id" ref="model_hvac_hotwater_project"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <template id="report_hotwater_project_document">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <div class="text-center mb-4">
+                            <h2><strong>Technical Offer – Hot Water &amp; Pool Heating</strong></h2>
+                        </div>
+                        
+                        <div class="row mb-4">
+                            <div class="col-6">
+                                <strong>Customer:</strong> <span t-field="doc.customer_id.name"/><br/>
+                                <t t-if="doc.attention_to"><strong>Attention:</strong> <span t-field="doc.attention_to"/><br/></t>
+                            </div>
+                            <div class="col-6 text-end">
+                                <strong>Offer:</strong> <span t-field="doc.offer_code"/><br/>
+                                <strong>Date:</strong> <span t-field="doc.date"/><br/>
+                            </div>
+                        </div>
+                        
+                        <h4>Hot Water Requirements</h4>
+                        <table class="table table-sm table-bordered">
+                            <thead><tr>
+                                <th>Type</th><th>Name</th><th>Qty</th><th>Demand (L/day)</th><th>Pool Volume (m³)</th><th>Equipment</th>
+                            </tr></thead>
+                            <tbody>
+                                <t t-foreach="doc.space_ids" t-as="space">
+                                    <tr>
+                                        <td><span t-field="space.space_type"/></td>
+                                        <td><span t-field="space.name"/></td>
+                                        <td><span t-field="space.qty"/></td>
+                                        <td class="text-end"><span t-esc="'%.0f' % space.demand_liters_per_day"/></td>
+                                        <td class="text-end"><span t-esc="'%.1f' % space.pool_volume"/></td>
+                                        <td>
+                                            <t t-if="space.heater_id"><span t-field="space.heater_id.name"/></t>
+                                            <t t-if="space.pool_heater_id"><span t-field="space.pool_heater_id.name"/></t>
+                                        </td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                            <tfoot><tr class="table-light">
+                                <td colspan="3"><strong>Total</strong></td>
+                                <td class="text-end"><strong><span t-esc="'%.0f' % doc.total_demand_liters"/> L/day</strong></td>
+                                <td class="text-end"><strong><span t-esc="'%.1f' % doc.total_pool_volume"/> m³</strong></td>
+                                <td></td>
+                            </tr></tfoot>
+                        </table>
+                        
+                        <h4 class="mt-4">Financial Offer</h4>
+                        <table class="table table-sm table-bordered">
+                            <thead><tr><th>Description</th><th>Unit</th><th>Qty</th><th>Price</th><th>Total</th></tr></thead>
+                            <tbody>
+                                <t t-foreach="doc.space_ids.filtered(lambda s: s.heater_id)" t-as="s">
+                                    <tr><td><span t-field="s.heater_id.name"/> - <span t-field="s.name"/></td>
+                                    <td>No.</td><td><span t-field="s.heater_qty"/></td>
+                                    <td class="text-end"><span t-esc="'{:,.0f}'.format(s.heater_price)"/></td>
+                                    <td class="text-end"><span t-esc="'{:,.0f}'.format(s.heater_subtotal)"/></td></tr>
+                                </t>
+                                <t t-foreach="doc.space_ids.filtered(lambda s: s.pool_heater_id)" t-as="s">
+                                    <tr><td><span t-field="s.pool_heater_id.name"/> - <span t-field="s.name"/></td>
+                                    <td>No.</td><td>1</td>
+                                    <td class="text-end"><span t-esc="'{:,.0f}'.format(s.pool_heater_price)"/></td>
+                                    <td class="text-end"><span t-esc="'{:,.0f}'.format(s.pool_heater_subtotal)"/></td></tr>
+                                </t>
+                                <t t-foreach="doc.equipment_line_ids" t-as="line">
+                                    <tr><td><span t-field="line.name"/></td><td><span t-field="line.unit"/></td>
+                                    <td><span t-esc="'%.0f' % line.quantity"/></td>
+                                    <td class="text-end"><span t-esc="'{:,.0f}'.format(line.unit_price)"/></td>
+                                    <td class="text-end"><span t-esc="'{:,.0f}'.format(line.subtotal)"/></td></tr>
+                                </t>
+                            </tbody>
+                            <tfoot>
+                                <tr class="table-primary"><td colspan="4"><h5>Grand Total</h5></td>
+                                <td class="text-end"><h5><span t-esc="'{:,.0f}'.format(doc.grand_total)"/></h5></td></tr>
+                            </tfoot>
+                        </table>
+                        
+                        <t t-if="doc.offer_includes"><h5 class="mt-4">The Offer Includes:</h5><div t-field="doc.offer_includes"/></t>
+                        <t t-if="doc.offer_excludes"><h5>The Offer Excludes:</h5><div t-field="doc.offer_excludes"/></t>
+                        <t t-if="doc.payment_terms"><h5>Payment Terms:</h5><div t-field="doc.payment_terms"/></t>
+                        <t t-if="doc.warranty"><h5>Warranty:</h5><div t-field="doc.warranty"/></t>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

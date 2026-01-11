@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="hvac_chiller_list" model="ir.ui.view">
+        <field name="name">hvac.chiller.list</field>
+        <field name="model">hvac.chiller</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="brand"/>
+                <field name="chiller_type"/>
+                <field name="cooling_capacity_kw"/>
+                <field name="cooling_capacity_ton"/>
+                <field name="price"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="hvac_chiller_form" model="ir.ui.view">
+        <field name="name">hvac.chiller.form</field>
+        <field name="model">hvac.chiller</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="brand"/>
+                            <field name="model"/>
+                            <field name="chiller_type"/>
+                        </group>
+                        <group>
+                            <field name="cooling_capacity_kw"/>
+                            <field name="cooling_capacity_ton"/>
+                            <field name="cooling_capacity_btu"/>
+                            <field name="power_input_kw"/>
+                            <field name="cop"/>
+                            <field name="voltage"/>
+                            <field name="price"/>
+                            <field name="active"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_hvac_chiller" model="ir.actions.act_window">
+        <field name="name">Chillers</field>
+        <field name="res_model">hvac.chiller</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+</odoo>

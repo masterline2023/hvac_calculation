@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="hvac_pool_heater_list" model="ir.ui.view">
+        <field name="name">hvac.pool.heater.list</field>
+        <field name="model">hvac.pool.heater</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="brand"/>
+                <field name="heater_type"/>
+                <field name="heating_capacity_kw"/>
+                <field name="min_pool_volume"/>
+                <field name="max_pool_volume"/>
+                <field name="price"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="hvac_pool_heater_form" model="ir.ui.view">
+        <field name="name">hvac.pool.heater.form</field>
+        <field name="model">hvac.pool.heater</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="brand"/>
+                            <field name="model"/>
+                            <field name="heater_type"/>
+                        </group>
+                        <group>
+                            <field name="heating_capacity_kw"/>
+                            <field name="heating_capacity_btu"/>
+                            <field name="min_pool_volume"/>
+                            <field name="max_pool_volume"/>
+                            <field name="power_input_kw"/>
+                            <field name="cop"/>
+                            <field name="voltage"/>
+                            <field name="price"/>
+                            <field name="active"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_hvac_pool_heater" model="ir.actions.act_window">
+        <field name="name">Pool Heaters</field>
+        <field name="res_model">hvac.pool.heater</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <!-- Pool Equipment -->
+    <record id="hvac_pool_equipment_list" model="ir.ui.view">
+        <field name="name">hvac.pool.equipment.list</field>
+        <field name="model">hvac.pool.equipment</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="equipment_type"/>
+                <field name="brand"/>
+                <field name="flow_rate_cmh"/>
+                <field name="power_kw"/>
+                <field name="price"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="hvac_pool_equipment_form" model="ir.ui.view">
+        <field name="name">hvac.pool.equipment.form</field>
+        <field name="model">hvac.pool.equipment</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="brand"/>
+                            <field name="model"/>
+                            <field name="equipment_type"/>
+                        </group>
+                        <group>
+                            <field name="flow_rate_cmh"/>
+                            <field name="power_kw"/>
+                            <field name="price"/>
+                            <field name="active"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_hvac_pool_equipment" model="ir.actions.act_window">
+        <field name="name">Pool Equipment</field>
+        <field name="res_model">hvac.pool.equipment</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+</odoo>

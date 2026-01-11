@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="hvac_duct_material_list" model="ir.ui.view">
+        <field name="name">hvac.duct.material.list</field>
+        <field name="model">hvac.duct.material</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="material_type"/>
+                <field name="thickness"/>
+                <field name="insulation"/>
+                <field name="unit"/>
+                <field name="price_per_unit"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="hvac_duct_material_form" model="ir.ui.view">
+        <field name="name">hvac.duct.material.form</field>
+        <field name="model">hvac.duct.material</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="material_type"/>
+                            <field name="thickness"/>
+                        </group>
+                        <group>
+                            <field name="insulation"/>
+                            <field name="insulation_thickness"/>
+                            <field name="unit"/>
+                            <field name="price_per_unit"/>
+                            <field name="active"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_hvac_duct_material" model="ir.actions.act_window">
+        <field name="name">Duct Materials</field>
+        <field name="res_model">hvac.duct.material</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="hvac_diffuser_list" model="ir.ui.view">
+        <field name="name">hvac.diffuser.list</field>
+        <field name="model">hvac.diffuser</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="diffuser_type"/>
+                <field name="size"/>
+                <field name="airflow_cfm"/>
+                <field name="price"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="hvac_diffuser_form" model="ir.ui.view">
+        <field name="name">hvac.diffuser.form</field>
+        <field name="model">hvac.diffuser</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="diffuser_type"/>
+                            <field name="size"/>
+                        </group>
+                        <group>
+                            <field name="airflow_cfm"/>
+                            <field name="material"/>
+                            <field name="price"/>
+                            <field name="active"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_hvac_diffuser" model="ir.actions.act_window">
+        <field name="name">Diffusers &amp; Grilles</field>
+        <field name="res_model">hvac.diffuser</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+</odoo>

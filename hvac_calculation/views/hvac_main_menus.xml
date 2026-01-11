@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Main HVAC Menu -->
+    <menuitem id="menu_hvac_root"
+              name="HVAC"
+              sequence="50"
+              web_icon="hvac_calculation,static/description/icon.png"/>
+
+    <!-- Shared Configuration -->
+    <menuitem id="menu_hvac_shared_config"
+              name="⚙️ General Settings"
+              parent="menu_hvac_root"
+              sequence="100"/>
+
+    <menuitem id="menu_hvac_terms"
+              name="Terms Templates"
+              parent="menu_hvac_shared_config"
+              action="action_hvac_terms"
+              sequence="10"/>
+
+</odoo>

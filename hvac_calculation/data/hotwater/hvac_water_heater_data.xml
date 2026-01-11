@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        
+        <!-- Gas Instant Water Heaters -->
+        <record id="heater_gas_instant_10" model="hvac.water.heater">
+            <field name="name">Gas Instant Heater 10 L/min</field>
+            <field name="heater_type">gas_instant</field>
+            <field name="flow_rate_lpm">10</field>
+            <field name="power_kw">20</field>
+            <field name="price">3500</field>
+        </record>
+        
+        <record id="heater_gas_instant_14" model="hvac.water.heater">
+            <field name="name">Gas Instant Heater 14 L/min</field>
+            <field name="heater_type">gas_instant</field>
+            <field name="flow_rate_lpm">14</field>
+            <field name="power_kw">28</field>
+            <field name="price">5000</field>
+        </record>
+        
+        <!-- Gas Storage Water Heaters -->
+        <record id="heater_gas_storage_50" model="hvac.water.heater">
+            <field name="name">Gas Storage Heater 50L</field>
+            <field name="heater_type">gas_storage</field>
+            <field name="capacity_liters">50</field>
+            <field name="power_kw">3</field>
+            <field name="price">4500</field>
+        </record>
+        
+        <record id="heater_gas_storage_80" model="hvac.water.heater">
+            <field name="name">Gas Storage Heater 80L</field>
+            <field name="heater_type">gas_storage</field>
+            <field name="capacity_liters">80</field>
+            <field name="power_kw">4</field>
+            <field name="price">6000</field>
+        </record>
+        
+        <record id="heater_gas_storage_100" model="hvac.water.heater">
+            <field name="name">Gas Storage Heater 100L</field>
+            <field name="heater_type">gas_storage</field>
+            <field name="capacity_liters">100</field>
+            <field name="power_kw">5</field>
+            <field name="price">7500</field>
+        </record>
+        
+        <!-- Electric Storage Water Heaters -->
+        <record id="heater_elec_storage_30" model="hvac.water.heater">
+            <field name="name">Electric Storage Heater 30L</field>
+            <field name="heater_type">electric_storage</field>
+            <field name="capacity_liters">30</field>
+            <field name="power_kw">1.5</field>
+            <field name="voltage">220</field>
+            <field name="price">2500</field>
+        </record>
+        
+        <record id="heater_elec_storage_50" model="hvac.water.heater">
+            <field name="name">Electric Storage Heater 50L</field>
+            <field name="heater_type">electric_storage</field>
+            <field name="capacity_liters">50</field>
+            <field name="power_kw">2</field>
+            <field name="voltage">220</field>
+            <field name="price">3500</field>
+        </record>
+        
+        <record id="heater_elec_storage_80" model="hvac.water.heater">
+            <field name="name">Electric Storage Heater 80L</field>
+            <field name="heater_type">electric_storage</field>
+            <field name="capacity_liters">80</field>
+            <field name="power_kw">2.5</field>
+            <field name="voltage">220</field>
+            <field name="price">4500</field>
+        </record>
+        
+        <record id="heater_elec_storage_100" model="hvac.water.heater">
+            <field name="name">Electric Storage Heater 100L</field>
+            <field name="heater_type">electric_storage</field>
+            <field name="capacity_liters">100</field>
+            <field name="power_kw">3</field>
+            <field name="voltage">220</field>
+            <field name="price">5500</field>
+        </record>
+        
+        <!-- Solar Water Heaters -->
+        <record id="heater_solar_150" model="hvac.water.heater">
+            <field name="name">Solar Water Heater 150L</field>
+            <field name="heater_type">solar</field>
+            <field name="capacity_liters">150</field>
+            <field name="collector_area_sqm">2</field>
+            <field name="tank_capacity">150</field>
+            <field name="price">15000</field>
+        </record>
+        
+        <record id="heater_solar_200" model="hvac.water.heater">
+            <field name="name">Solar Water Heater 200L</field>
+            <field name="heater_type">solar</field>
+            <field name="capacity_liters">200</field>
+            <field name="collector_area_sqm">3</field>
+            <field name="tank_capacity">200</field>
+            <field name="price">20000</field>
+        </record>
+        
+        <record id="heater_solar_300" model="hvac.water.heater">
+            <field name="name">Solar Water Heater 300L</field>
+            <field name="heater_type">solar</field>
+            <field name="capacity_liters">300</field>
+            <field name="collector_area_sqm">4</field>
+            <field name="tank_capacity">300</field>
+            <field name="price">28000</field>
+        </record>
+        
+        <!-- Heat Pump Water Heaters -->
+        <record id="heater_hp_150" model="hvac.water.heater">
+            <field name="name">Heat Pump Water Heater 150L</field>
+            <field name="heater_type">heat_pump</field>
+            <field name="capacity_liters">150</field>
+            <field name="power_kw">0.5</field>
+            <field name="voltage">220</field>
+            <field name="price">25000</field>
+        </record>
+        
+        <record id="heater_hp_200" model="hvac.water.heater">
+            <field name="name">Heat Pump Water Heater 200L</field>
+            <field name="heater_type">heat_pump</field>
+            <field name="capacity_liters">200</field>
+            <field name="power_kw">0.7</field>
+            <field name="voltage">220</field>
+            <field name="price">32000</field>
+        </record>
+        
+        <record id="heater_hp_300" model="hvac.water.heater">
+            <field name="name">Heat Pump Water Heater 300L</field>
+            <field name="heater_type">heat_pump</field>
+            <field name="capacity_liters">300</field>
+            <field name="power_kw">1</field>
+            <field name="voltage">220</field>
+            <field name="price">42000</field>
+        </record>
+        
+    </data>
+</odoo>

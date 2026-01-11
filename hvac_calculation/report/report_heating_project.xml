@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="action_report_heating_project" model="ir.actions.report">
+        <field name="name">Heating Technical Offer</field>
+        <field name="model">hvac.heating.project</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">hvac_calculation.report_heating_project_document</field>
+        <field name="report_file">hvac_calculation.report_heating_project_document</field>
+        <field name="binding_model_id" ref="model_hvac_heating_project"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <template id="report_heating_project_document">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <div class="text-center mb-4">
+                            <h2><strong>Technical Offer – Central Heating System</strong></h2>
+                        </div>
+                        
+                        <div class="row mb-4">
+                            <div class="col-6">
+                                <strong>Customer:</strong> <span t-field="doc.customer_id.name"/><br/>
+                                <t t-if="doc.attention_to"><strong>Attention:</strong> <span t-field="doc.attention_to"/><br/></t>
+                            </div>
+                            <div class="col-6 text-end">
+                                <strong>Offer:</strong> <span t-field="doc.offer_code"/><br/>
+                                <strong>Date:</strong> <span t-field="doc.date"/><br/>
+                            </div>
+                        </div>
+                        
+                        <h4>Heat Load Calculation</h4>
+                        <table class="table table-sm table-bordered">
+                            <thead><tr>
+                                <th>Floor</th><th>Room</th><th>Area (m²)</th><th>Heat Load (W)</th><th>System</th><th>Radiator</th>
+                            </tr></thead>
+                            <tbody>
+                                <t t-foreach="doc.space_ids" t-as="space">
+                                    <tr>
+                                        <td><span t-field="space.floor"/></td>
+                                        <td><span t-field="space.room_name"/></td>
+                                        <td class="text-end"><span t-esc="'%.2f' % space.area"/></td>
+                                        <td class="text-end"><span t-esc="'%.0f' % space.heat_load"/></td>
+                                        <td><span t-field="space.system_type"/></td>
+                                        <td><t t-if="space.radiator_id"><span t-field="space.radiator_id.size_display"/> x <span t-field="space.radiator_qty"/></t></td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                            <tfoot><tr class="table-light">
+                                <td colspan="2"><strong>Total</strong></td>
+                                <td class="text-end"><strong><span t-esc="'%.2f' % doc.total_heating_area"/> m²</strong></td>
+                                <td class="text-end"><strong><span t-esc="'%.0f' % doc.total_heat_load"/> W</strong></td>
+                                <td colspan="2"><strong><span t-esc="'%.2f' % doc.total_heat_load_kw"/> kW</strong></td>
+                            </tr></tfoot>
+                        </table>
+                        
+                        <h4 class="mt-4">Financial Offer</h4>
+                        <table class="table table-sm table-bordered">
+                            <thead><tr><th>Description</th><th>Unit</th><th>Qty</th><th>Price</th><th>Total</th></tr></thead>
+                            <tbody>
+                                <t t-if="doc.boiler_id"><tr>
+                                    <td><span t-field="doc.boiler_id.name"/></td><td>No.</td>
+                                    <td><span t-field="doc.boiler_qty"/></td>
+                                    <td class="text-end"><span t-esc="'{:,.0f}'.format(doc.boiler_id.price)"/></td>
+                                    <td class="text-end"><span t-esc="'{:,.0f}'.format(doc.boiler_price)"/></td>
+                                </tr></t>
+                                <t t-foreach="doc.space_ids.filtered(lambda s: s.radiator_id and s.system_type == 'radiator')" t-as="s">
+                                    <tr><td>Radiator (<span t-field="s.radiator_id.size_display"/>) - <span t-field="s.room_name"/></td>
+                                    <td>No.</td><td><span t-field="s.radiator_qty"/></td>
+                                    <td class="text-end"><span t-esc="'{:,.0f}'.format(s.radiator_unit_price)"/></td>
+                                    <td class="text-end"><span t-esc="'{:,.0f}'.format(s.radiator_subtotal)"/></td></tr>
+                                </t>
+                                <t t-foreach="doc.space_ids.filtered(lambda s: s.system_type == 'ufh')" t-as="s">
+                                    <tr><td>Under Floor Heating - <span t-field="s.room_name"/></td>
+                                    <td>m²</td><td><span t-esc="'%.2f' % s.area"/></td>
+                                    <td class="text-end"><span t-esc="'{:,.0f}'.format(s.ufh_price_per_sqm)"/></td>
+                                    <td class="text-end"><span t-esc="'{:,.0f}'.format(s.ufh_subtotal)"/></td></tr>
+                                </t>
+                                <t t-if="doc.thermostat_count"><tr>
+                                    <td>Room Thermostat (UFH)</td><td>No.</td>
+                                    <td><span t-esc="doc.thermostat_count"/></td><td class="text-end">5,000</td>
+                                    <td class="text-end"><span t-esc="'{:,.0f}'.format(doc.thermostat_total)"/></td>
+                                </tr></t>
+                                <t t-foreach="doc.piping_line_ids" t-as="line">
+                                    <tr><td><span t-field="line.name"/></td><td><span t-field="line.unit"/></td>
+                                    <td><span t-esc="'%.2f' % line.quantity"/></td>
+                                    <td class="text-end"><span t-esc="'{:,.0f}'.format(line.unit_price)"/></td>
+                                    <td class="text-end"><span t-esc="'{:,.0f}'.format(line.subtotal)"/></td></tr>
+                                </t>
+                            </tbody>
+                            <tfoot>
+                                <tr class="table-primary"><td colspan="4"><h5>Grand Total</h5></td>
+                                <td class="text-end"><h5><span t-esc="'{:,.0f}'.format(doc.grand_total)"/></h5></td></tr>
+                            </tfoot>
+                        </table>
+                        
+                        <t t-if="doc.offer_includes"><h5 class="mt-4">The Offer Includes:</h5><div t-field="doc.offer_includes"/></t>
+                        <t t-if="doc.offer_excludes"><h5>The Offer Excludes:</h5><div t-field="doc.offer_excludes"/></t>
+                        <t t-if="doc.payment_terms"><h5>Payment Terms:</h5><div t-field="doc.payment_terms"/></t>
+                        <t t-if="doc.warranty"><h5>Warranty:</h5><div t-field="doc.warranty"/></t>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

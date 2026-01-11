@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        
+        <record id="ahu_1000" model="hvac.ahu">
+            <field name="name">AHU 1000 CFM</field>
+            <field name="ahu_type">standard</field>
+            <field name="airflow_cfm">1000</field>
+            <field name="cooling_capacity_kw">10</field>
+            <field name="fan_power_kw">0.75</field>
+            <field name="voltage">380</field>
+            <field name="price">25000</field>
+        </record>
+        
+        <record id="ahu_2000" model="hvac.ahu">
+            <field name="name">AHU 2000 CFM</field>
+            <field name="ahu_type">standard</field>
+            <field name="airflow_cfm">2000</field>
+            <field name="cooling_capacity_kw">20</field>
+            <field name="fan_power_kw">1.5</field>
+            <field name="voltage">380</field>
+            <field name="price">40000</field>
+        </record>
+        
+        <record id="ahu_3000" model="hvac.ahu">
+            <field name="name">AHU 3000 CFM</field>
+            <field name="ahu_type">standard</field>
+            <field name="airflow_cfm">3000</field>
+            <field name="cooling_capacity_kw">30</field>
+            <field name="fan_power_kw">2.2</field>
+            <field name="voltage">380</field>
+            <field name="price">55000</field>
+        </record>
+        
+        <record id="ahu_5000" model="hvac.ahu">
+            <field name="name">AHU 5000 CFM</field>
+            <field name="ahu_type">standard</field>
+            <field name="airflow_cfm">5000</field>
+            <field name="cooling_capacity_kw">50</field>
+            <field name="fan_power_kw">3.7</field>
+            <field name="voltage">380</field>
+            <field name="price">80000</field>
+        </record>
+        
+        <record id="ahu_8000" model="hvac.ahu">
+            <field name="name">AHU 8000 CFM</field>
+            <field name="ahu_type">standard</field>
+            <field name="airflow_cfm">8000</field>
+            <field name="cooling_capacity_kw">80</field>
+            <field name="fan_power_kw">5.5</field>
+            <field name="voltage">380</field>
+            <field name="price">120000</field>
+        </record>
+        
+        <record id="ahu_10000" model="hvac.ahu">
+            <field name="name">AHU 10000 CFM</field>
+            <field name="ahu_type">standard</field>
+            <field name="airflow_cfm">10000</field>
+            <field name="cooling_capacity_kw">100</field>
+            <field name="fan_power_kw">7.5</field>
+            <field name="voltage">380</field>
+            <field name="price">150000</field>
+        </record>
+        
+    </data>
+</odoo>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Hot Water Sub-menu under Main HVAC -->
+    <menuitem id="menu_hvac_hotwater"
+              name="💧 Hot Water &amp; Pool"
+              parent="menu_hvac_root"
+              sequence="30"/>
+
+    <menuitem id="menu_hvac_hotwater_projects"
+              name="Hot Water Projects"
+              parent="menu_hvac_hotwater"
+              action="action_hvac_hotwater_project"
+              sequence="10"/>
+
+    <menuitem id="menu_hvac_hotwater_config"
+              name="Configuration"
+              parent="menu_hvac_hotwater"
+              sequence="100"/>
+
+    <menuitem id="menu_hvac_hotwater_heaters"
+              name="Water Heaters"
+              parent="menu_hvac_hotwater_config"
+              action="action_hvac_water_heater"
+              sequence="10"/>
+
+    <menuitem id="menu_hvac_hotwater_pool_heaters"
+              name="Pool Heaters"
+              parent="menu_hvac_hotwater_config"
+              action="action_hvac_pool_heater"
+              sequence="20"/>
+
+    <menuitem id="menu_hvac_hotwater_pool_equipment"
+              name="Pool Equipment"
+              parent="menu_hvac_hotwater_config"
+              action="action_hvac_pool_equipment"
+              sequence="30"/>
+
+</odoo>

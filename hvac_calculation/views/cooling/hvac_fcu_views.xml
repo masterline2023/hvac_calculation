@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="hvac_fcu_list" model="ir.ui.view">
+        <field name="name">hvac.fcu.list</field>
+        <field name="model">hvac.fcu</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="brand"/>
+                <field name="fcu_type"/>
+                <field name="cooling_capacity_kw"/>
+                <field name="cooling_capacity_btu"/>
+                <field name="airflow_cfm"/>
+                <field name="price"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="hvac_fcu_form" model="ir.ui.view">
+        <field name="name">hvac.fcu.form</field>
+        <field name="model">hvac.fcu</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="brand"/>
+                            <field name="model"/>
+                            <field name="fcu_type"/>
+                            <field name="fan_speeds"/>
+                        </group>
+                        <group>
+                            <field name="cooling_capacity_kw"/>
+                            <field name="cooling_capacity_btu"/>
+                            <field name="cooling_capacity_ton"/>
+                            <field name="airflow_cfm"/>
+                            <field name="power_input_w"/>
+                            <field name="voltage"/>
+                            <field name="price"/>
+                            <field name="active"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_hvac_fcu" model="ir.actions.act_window">
+        <field name="name">Fan Coil Units</field>
+        <field name="res_model">hvac.fcu</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+</odoo>

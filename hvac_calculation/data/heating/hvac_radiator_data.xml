@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        
+        <!-- ALUMINUM RADIATORS - HEIGHT 580mm -->
+        <record id="radiator_al_580_400" model="hvac.radiator">
+            <field name="name">Aluminum Radiator 580x400</field>
+            <field name="radiator_type">aluminum</field>
+            <field name="height">580</field>
+            <field name="width">400</field>
+            <field name="watt_output">640</field>
+            <field name="price">4500</field>
+        </record>
+        <record id="radiator_al_580_480" model="hvac.radiator">
+            <field name="name">Aluminum Radiator 580x480</field>
+            <field name="radiator_type">aluminum</field>
+            <field name="height">580</field>
+            <field name="width">480</field>
+            <field name="watt_output">800</field>
+            <field name="price">5400</field>
+        </record>
+        <record id="radiator_al_580_560" model="hvac.radiator">
+            <field name="name">Aluminum Radiator 580x560</field>
+            <field name="radiator_type">aluminum</field>
+            <field name="height">580</field>
+            <field name="width">560</field>
+            <field name="watt_output">960</field>
+            <field name="price">6300</field>
+        </record>
+        <record id="radiator_al_580_640" model="hvac.radiator">
+            <field name="name">Aluminum Radiator 580x640</field>
+            <field name="radiator_type">aluminum</field>
+            <field name="height">580</field>
+            <field name="width">640</field>
+            <field name="watt_output">1120</field>
+            <field name="price">7200</field>
+        </record>
+        <record id="radiator_al_580_720" model="hvac.radiator">
+            <field name="name">Aluminum Radiator 580x720</field>
+            <field name="radiator_type">aluminum</field>
+            <field name="height">580</field>
+            <field name="width">720</field>
+            <field name="watt_output">1280</field>
+            <field name="price">8100</field>
+        </record>
+        <record id="radiator_al_580_800" model="hvac.radiator">
+            <field name="name">Aluminum Radiator 580x800</field>
+            <field name="radiator_type">aluminum</field>
+            <field name="height">580</field>
+            <field name="width">800</field>
+            <field name="watt_output">1440</field>
+            <field name="price">9000</field>
+        </record>
+        <record id="radiator_al_580_880" model="hvac.radiator">
+            <field name="name">Aluminum Radiator 580x880</field>
+            <field name="radiator_type">aluminum</field>
+            <field name="height">580</field>
+            <field name="width">880</field>
+            <field name="watt_output">1600</field>
+            <field name="price">9900</field>
+        </record>
+        <record id="radiator_al_580_960" model="hvac.radiator">
+            <field name="name">Aluminum Radiator 580x960</field>
+            <field name="radiator_type">aluminum</field>
+            <field name="height">580</field>
+            <field name="width">960</field>
+            <field name="watt_output">1760</field>
+            <field name="price">10800</field>
+        </record>
+        <record id="radiator_al_580_1040" model="hvac.radiator">
+            <field name="name">Aluminum Radiator 580x1040</field>
+            <field name="radiator_type">aluminum</field>
+            <field name="height">580</field>
+            <field name="width">1040</field>
+            <field name="watt_output">1920</field>
+            <field name="price">11700</field>
+        </record>
+        <record id="radiator_al_580_1120" model="hvac.radiator">
+            <field name="name">Aluminum Radiator 580x1120</field>
+            <field name="radiator_type">aluminum</field>
+            <field name="height">580</field>
+            <field name="width">1120</field>
+            <field name="watt_output">2080</field>
+            <field name="price">12600</field>
+        </record>
+        <record id="radiator_al_580_1200" model="hvac.radiator">
+            <field name="name">Aluminum Radiator 580x1200</field>
+            <field name="radiator_type">aluminum</field>
+            <field name="height">580</field>
+            <field name="width">1200</field>
+            <field name="watt_output">2240</field>
+            <field name="price">13500</field>
+        </record>
+        
+        <!-- ALUMINUM RADIATORS - HEIGHT 680mm -->
+        <record id="radiator_al_680_400" model="hvac.radiator">
+            <field name="name">Aluminum Radiator 680x400</field>
+            <field name="radiator_type">aluminum</field>
+            <field name="height">680</field>
+            <field name="width">400</field>
+            <field name="watt_output">800</field>
+            <field name="price">5500</field>
+        </record>
+        <record id="radiator_al_680_480" model="hvac.radiator">
+            <field name="name">Aluminum Radiator 680x480</field>
+            <field name="radiator_type">aluminum</field>
+            <field name="height">680</field>
+            <field name="width">480</field>
+            <field name="watt_output">1000</field>
+            <field name="price">6600</field>
+        </record>
+        <record id="radiator_al_680_560" model="hvac.radiator">
+            <field name="name">Aluminum Radiator 680x560</field>
+            <field name="radiator_type">aluminum</field>
+            <field name="height">680</field>
+            <field name="width">560</field>
+            <field name="watt_output">1200</field>
+            <field name="price">7700</field>
+        </record>
+        <record id="radiator_al_680_640" model="hvac.radiator">
+            <field name="name">Aluminum Radiator 680x640</field>
+            <field name="radiator_type">aluminum</field>
+            <field name="height">680</field>
+            <field name="width">640</field>
+            <field name="watt_output">1400</field>
+            <field name="price">8800</field>
+        </record>
+        <record id="radiator_al_680_720" model="hvac.radiator">
+            <field name="name">Aluminum Radiator 680x720</field>
+            <field name="radiator_type">aluminum</field>
+            <field name="height">680</field>
+            <field name="width">720</field>
+            <field name="watt_output">1600</field>
+            <field name="price">9900</field>
+        </record>
+        <record id="radiator_al_680_800" model="hvac.radiator">
+            <field name="name">Aluminum Radiator 680x800</field>
+            <field name="radiator_type">aluminum</field>
+            <field name="height">680</field>
+            <field name="width">800</field>
+            <field name="watt_output">1800</field>
+            <field name="price">11000</field>
+        </record>
+        <record id="radiator_al_680_880" model="hvac.radiator">
+            <field name="name">Aluminum Radiator 680x880</field>
+            <field name="radiator_type">aluminum</field>
+            <field name="height">680</field>
+            <field name="width">880</field>
+            <field name="watt_output">2000</field>
+            <field name="price">12100</field>
+        </record>
+        <record id="radiator_al_680_960" model="hvac.radiator">
+            <field name="name">Aluminum Radiator 680x960</field>
+            <field name="radiator_type">aluminum</field>
+            <field name="height">680</field>
+            <field name="width">960</field>
+            <field name="watt_output">2200</field>
+            <field name="price">13200</field>
+        </record>
+        <record id="radiator_al_680_1040" model="hvac.radiator">
+            <field name="name">Aluminum Radiator 680x1040</field>
+            <field name="radiator_type">aluminum</field>
+            <field name="height">680</field>
+            <field name="width">1040</field>
+            <field name="watt_output">2400</field>
+            <field name="price">14300</field>
+        </record>
+        <record id="radiator_al_680_1120" model="hvac.radiator">
+            <field name="name">Aluminum Radiator 680x1120</field>
+            <field name="radiator_type">aluminum</field>
+            <field name="height">680</field>
+            <field name="width">1120</field>
+            <field name="watt_output">2600</field>
+            <field name="price">15400</field>
+        </record>
+        <record id="radiator_al_680_1200" model="hvac.radiator">
+            <field name="name">Aluminum Radiator 680x1200</field>
+            <field name="radiator_type">aluminum</field>
+            <field name="height">680</field>
+            <field name="width">1200</field>
+            <field name="watt_output">2800</field>
+            <field name="price">16500</field>
+        </record>
+        
+        <!-- ALUMINUM RADIATORS - HEIGHT 880mm -->
+        <record id="radiator_al_880_400" model="hvac.radiator">
+            <field name="name">Aluminum Radiator 880x400</field>
+            <field name="radiator_type">aluminum</field>
+            <field name="height">880</field>
+            <field name="width">400</field>
+            <field name="watt_output">960</field>
+            <field name="price">6500</field>
+        </record>
+        <record id="radiator_al_880_480" model="hvac.radiator">
+            <field name="name">Aluminum Radiator 880x480</field>
+            <field name="radiator_type">aluminum</field>
+            <field name="height">880</field>
+            <field name="width">480</field>
+            <field name="watt_output">1200</field>
+            <field name="price">7800</field>
+        </record>
+        <record id="radiator_al_880_560" model="hvac.radiator">
+            <field name="name">Aluminum Radiator 880x560</field>
+            <field name="radiator_type">aluminum</field>
+            <field name="height">880</field>
+            <field name="width">560</field>
+            <field name="watt_output">1440</field>
+            <field name="price">9100</field>
+        </record>
+        <record id="radiator_al_880_640" model="hvac.radiator">
+            <field name="name">Aluminum Radiator 880x640</field>
+            <field name="radiator_type">aluminum</field>
+            <field name="height">880</field>
+            <field name="width">640</field>
+            <field name="watt_output">1680</field>
+            <field name="price">10400</field>
+        </record>
+        <record id="radiator_al_880_720" model="hvac.radiator">
+            <field name="name">Aluminum Radiator 880x720</field>
+            <field name="radiator_type">aluminum</field>
+            <field name="height">880</field>
+            <field name="width">720</field>
+            <field name="watt_output">1920</field>
+            <field name="price">11700</field>
+        </record>
+        <record id="radiator_al_880_800" model="hvac.radiator">
+            <field name="name">Aluminum Radiator 880x800</field>
+            <field name="radiator_type">aluminum</field>
+            <field name="height">880</field>
+            <field name="width">800</field>
+            <field name="watt_output">2160</field>
+            <field name="price">13000</field>
+        </record>
+        <record id="radiator_al_880_880" model="hvac.radiator">
+            <field name="name">Aluminum Radiator 880x880</field>
+            <field name="radiator_type">aluminum</field>
+            <field name="height">880</field>
+            <field name="width">880</field>
+            <field name="watt_output">2400</field>
+            <field name="price">14300</field>
+        </record>
+        <record id="radiator_al_880_960" model="hvac.radiator">
+            <field name="name">Aluminum Radiator 880x960</field>
+            <field name="radiator_type">aluminum</field>
+            <field name="height">880</field>
+            <field name="width">960</field>
+            <field name="watt_output">2640</field>
+            <field name="price">15600</field>
+        </record>
+        <record id="radiator_al_880_1040" model="hvac.radiator">
+            <field name="name">Aluminum Radiator 880x1040</field>
+            <field name="radiator_type">aluminum</field>
+            <field name="height">880</field>
+            <field name="width">1040</field>
+            <field name="watt_output">2880</field>
+            <field name="price">16900</field>
+        </record>
+        <record id="radiator_al_880_1120" model="hvac.radiator">
+            <field name="name">Aluminum Radiator 880x1120</field>
+            <field name="radiator_type">aluminum</field>
+            <field name="height">880</field>
+            <field name="width">1120</field>
+            <field name="watt_output">3120</field>
+            <field name="price">18200</field>
+        </record>
+        <record id="radiator_al_880_1200" model="hvac.radiator">
+            <field name="name">Aluminum Radiator 880x1200</field>
+            <field name="radiator_type">aluminum</field>
+            <field name="height">880</field>
+            <field name="width">1200</field>
+            <field name="watt_output">3360</field>
+            <field name="price">19500</field>
+        </record>
+        
+        <!-- TOWEL RADIATORS -->
+        <record id="radiator_towel_500_700" model="hvac.radiator">
+            <field name="name">Towel Radiator 500x700</field>
+            <field name="radiator_type">towel</field>
+            <field name="height">500</field>
+            <field name="width">700</field>
+            <field name="watt_output">350</field>
+            <field name="price">7000</field>
+        </record>
+        <record id="radiator_towel_500_800" model="hvac.radiator">
+            <field name="name">Towel Radiator 500x800</field>
+            <field name="radiator_type">towel</field>
+            <field name="height">500</field>
+            <field name="width">800</field>
+            <field name="watt_output">400</field>
+            <field name="price">8000</field>
+        </record>
+        <record id="radiator_towel_500_1200" model="hvac.radiator">
+            <field name="name">Towel Radiator 500x1200</field>
+            <field name="radiator_type">towel</field>
+            <field name="height">500</field>
+            <field name="width">1200</field>
+            <field name="watt_output">800</field>
+            <field name="price">12000</field>
+        </record>
+        <record id="radiator_towel_500_1600" model="hvac.radiator">
+            <field name="name">Towel Radiator 500x1600</field>
+            <field name="radiator_type">towel</field>
+            <field name="height">500</field>
+            <field name="width">1600</field>
+            <field name="watt_output">1200</field>
+            <field name="price">16000</field>
+        </record>
+        
+    </data>
+</odoo>

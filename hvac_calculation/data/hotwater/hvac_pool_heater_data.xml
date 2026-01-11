@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        
+        <!-- Pool Heat Pumps -->
+        <record id="pool_hp_10" model="hvac.pool.heater">
+            <field name="name">Pool Heat Pump 10 kW</field>
+            <field name="heater_type">heat_pump</field>
+            <field name="heating_capacity_kw">10</field>
+            <field name="min_pool_volume">20</field>
+            <field name="max_pool_volume">50</field>
+            <field name="power_input_kw">2</field>
+            <field name="cop">5</field>
+            <field name="voltage">220</field>
+            <field name="price">35000</field>
+        </record>
+        
+        <record id="pool_hp_15" model="hvac.pool.heater">
+            <field name="name">Pool Heat Pump 15 kW</field>
+            <field name="heater_type">heat_pump</field>
+            <field name="heating_capacity_kw">15</field>
+            <field name="min_pool_volume">40</field>
+            <field name="max_pool_volume">75</field>
+            <field name="power_input_kw">3</field>
+            <field name="cop">5</field>
+            <field name="voltage">220</field>
+            <field name="price">48000</field>
+        </record>
+        
+        <record id="pool_hp_20" model="hvac.pool.heater">
+            <field name="name">Pool Heat Pump 20 kW</field>
+            <field name="heater_type">heat_pump</field>
+            <field name="heating_capacity_kw">20</field>
+            <field name="min_pool_volume">60</field>
+            <field name="max_pool_volume">100</field>
+            <field name="power_input_kw">4</field>
+            <field name="cop">5</field>
+            <field name="voltage">380</field>
+            <field name="price">62000</field>
+        </record>
+        
+        <record id="pool_hp_30" model="hvac.pool.heater">
+            <field name="name">Pool Heat Pump 30 kW</field>
+            <field name="heater_type">heat_pump</field>
+            <field name="heating_capacity_kw">30</field>
+            <field name="min_pool_volume">90</field>
+            <field name="max_pool_volume">150</field>
+            <field name="power_input_kw">6</field>
+            <field name="cop">5</field>
+            <field name="voltage">380</field>
+            <field name="price">85000</field>
+        </record>
+        
+        <!-- Gas Pool Heaters -->
+        <record id="pool_gas_30" model="hvac.pool.heater">
+            <field name="name">Gas Pool Heater 30 kW</field>
+            <field name="heater_type">gas</field>
+            <field name="heating_capacity_kw">30</field>
+            <field name="min_pool_volume">30</field>
+            <field name="max_pool_volume">80</field>
+            <field name="price">45000</field>
+        </record>
+        
+        <record id="pool_gas_50" model="hvac.pool.heater">
+            <field name="name">Gas Pool Heater 50 kW</field>
+            <field name="heater_type">gas</field>
+            <field name="heating_capacity_kw">50</field>
+            <field name="min_pool_volume">60</field>
+            <field name="max_pool_volume">130</field>
+            <field name="price">65000</field>
+        </record>
+        
+        <!-- Electric Pool Heaters -->
+        <record id="pool_elec_9" model="hvac.pool.heater">
+            <field name="name">Electric Pool Heater 9 kW</field>
+            <field name="heater_type">electric</field>
+            <field name="heating_capacity_kw">9</field>
+            <field name="min_pool_volume">15</field>
+            <field name="max_pool_volume">45</field>
+            <field name="power_input_kw">9</field>
+            <field name="voltage">380</field>
+            <field name="price">18000</field>
+        </record>
+        
+        <record id="pool_elec_18" model="hvac.pool.heater">
+            <field name="name">Electric Pool Heater 18 kW</field>
+            <field name="heater_type">electric</field>
+            <field name="heating_capacity_kw">18</field>
+            <field name="min_pool_volume">30</field>
+            <field name="max_pool_volume">90</field>
+            <field name="power_input_kw">18</field>
+            <field name="voltage">380</field>
+            <field name="price">28000</field>
+        </record>
+        
+        <!-- Pool Equipment -->
+        <record id="pool_pump_1" model="hvac.pool.equipment">
+            <field name="name">Pool Circulation Pump 1 HP</field>
+            <field name="equipment_type">pump</field>
+            <field name="flow_rate_cmh">15</field>
+            <field name="power_kw">0.75</field>
+            <field name="price">8000</field>
+        </record>
+        
+        <record id="pool_pump_1_5" model="hvac.pool.equipment">
+            <field name="name">Pool Circulation Pump 1.5 HP</field>
+            <field name="equipment_type">pump</field>
+            <field name="flow_rate_cmh">22</field>
+            <field name="power_kw">1.1</field>
+            <field name="price">10000</field>
+        </record>
+        
+        <record id="pool_filter_20" model="hvac.pool.equipment">
+            <field name="name">Sand Filter 20 inch</field>
+            <field name="equipment_type">filter</field>
+            <field name="flow_rate_cmh">10</field>
+            <field name="price">6000</field>
+        </record>
+        
+        <record id="pool_filter_24" model="hvac.pool.equipment">
+            <field name="name">Sand Filter 24 inch</field>
+            <field name="equipment_type">filter</field>
+            <field name="flow_rate_cmh">15</field>
+            <field name="price">8000</field>
+        </record>
+        
+        <record id="pool_controller" model="hvac.pool.equipment">
+            <field name="name">Pool Controller Unit</field>
+            <field name="equipment_type">controller</field>
+            <field name="price">12000</field>
+        </record>
+        
+    </data>
+</odoo>

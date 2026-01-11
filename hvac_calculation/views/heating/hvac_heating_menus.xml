@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Heating Sub-menu under Main HVAC -->
+    <menuitem id="menu_hvac_heating"
+              name="🔥 Central Heating"
+              parent="menu_hvac_root"
+              sequence="10"/>
+
+    <menuitem id="menu_hvac_heating_projects"
+              name="Heating Projects"
+              parent="menu_hvac_heating"
+              action="action_hvac_heating_project"
+              sequence="10"/>
+
+    <menuitem id="menu_hvac_heating_config"
+              name="Configuration"
+              parent="menu_hvac_heating"
+              sequence="100"/>
+
+    <menuitem id="menu_hvac_heating_boilers"
+              name="Boilers"
+              parent="menu_hvac_heating_config"
+              action="action_hvac_boiler"
+              sequence="10"/>
+
+    <menuitem id="menu_hvac_heating_radiators"
+              name="Radiators"
+              parent="menu_hvac_heating_config"
+              action="action_hvac_radiator"
+              sequence="20"/>
+
+    <menuitem id="menu_hvac_heating_piping"
+              name="Piping Materials"
+              parent="menu_hvac_heating_config"
+              action="action_hvac_heating_piping_material"
+              sequence="30"/>
+
+</odoo>

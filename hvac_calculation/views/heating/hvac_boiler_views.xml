@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="hvac_boiler_list" model="ir.ui.view">
+        <field name="name">hvac.boiler.list</field>
+        <field name="model">hvac.boiler</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="brand"/>
+                <field name="boiler_type"/>
+                <field name="fuel_type"/>
+                <field name="kw_output"/>
+                <field name="efficiency"/>
+                <field name="price"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="hvac_boiler_form" model="ir.ui.view">
+        <field name="name">hvac.boiler.form</field>
+        <field name="model">hvac.boiler</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="brand"/>
+                            <field name="model"/>
+                            <field name="boiler_type"/>
+                            <field name="fuel_type"/>
+                        </group>
+                        <group>
+                            <field name="kw_output"/>
+                            <field name="kw_input"/>
+                            <field name="efficiency"/>
+                            <field name="price"/>
+                            <field name="active"/>
+                        </group>
+                    </group>
+                    <field name="notes" placeholder="Notes..."/>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_hvac_boiler" model="ir.actions.act_window">
+        <field name="name">Boilers</field>
+        <field name="res_model">hvac.boiler</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+</odoo>
